@@ -14,14 +14,8 @@ class MatchUser extends Migration
     public function up()
     {
         Schema::create('match_user', function (Blueprint $table) {
-            $table->id();
-            $table->integer('matchid');
-            $table->integer('userid');
-            $table->integer('score');
-            $table->integer('oldrating');
-            $table->integer('newrating');
-            $table->binary('win')->default(FALSE);
-            $table->timestamps();
+            $table->foreignId('match_id');
+            $table->foreignId('user_id');
         });
     }
 

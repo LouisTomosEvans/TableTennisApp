@@ -73,9 +73,25 @@ class MatchController extends Controller
 
         // Create a new match
         $newmatch = new Match();
-        $newmatch->users()->attach($playerone, [$newmatch], ['score' => $scoreone['scoreone'], 'oldrating' => $playeroneoldrating, 'newrating' => $playerone->rating, 'win' => $playeronewin]);
-        $newmatch->users()->attach($playertwo, [$newmatch], ['score' => $scoretwo['scoretwo'], 'oldrating' => $playertwooldrating, 'newrating' => $playertwo->rating, 'win' => $playertwowin]);
-        
+        $newmatch->P1 = $playerone->id;
+        $newmatch->P1score = $scoreone['scoreone'];
+        $newmatch->P1oldrating = $playeroneoldrating;
+        $newmatch->P1newrating = $playerone->rating;
+        $newmatch->P2 = $playertwo->id;
+        $newmatch->P2score = $scoretwo['scoretwo'];
+        $newmatch->P2oldrating = $playertwooldrating;
+        $newmatch->P2newrating = $playertwo->rating;
+        if($playeronewin){
+            $newmatch->P1win = TRUE;
+        }
+        else{
+            $newmatch->P2win = TRUE;
+        }
+        $newmatch->save();
+
+        $playerone->matches()->attach($newmatch);
+        $playertwo->matches()->attach($newmatch);
+       
         // Redirect
         return redirect()->route('match.success');
     }

@@ -132,3 +132,40 @@ body {
   .greenbackground{
     background-color: #28a745;
   }
+
+  .Widget{
+    background-color: #fff;
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+
+  }
+
+  .Widgettitlebox{
+    background-color: #32b6ff;
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .Widgettitle{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    color: white;
+  }
+
+  .subtext{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    color: black;
+  }
+  .rating{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    color: black;
+  }

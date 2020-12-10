@@ -11,6 +11,6 @@ class Match extends Model
 
     public function users()
     {
-        return $this->belongstoMany(User::class, 'match_user', 'matchid', 'userid')->withTimestamps();
+        return $this->belongstoMany(User::class);
     }
 }

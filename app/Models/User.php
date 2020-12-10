@@ -63,6 +63,6 @@ class User extends Authenticatable
 
     public function matches()
     {
-        return $this->belongsToMany(Match::class, 'match_user', 'userid', 'matchid');
+        return $this->belongsToMany(Match::class);
     }
 }
