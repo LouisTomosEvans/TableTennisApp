@@ -6,6 +6,10 @@
         <title>
             Dashboard
         </title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
         <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
 
@@ -36,8 +40,8 @@
         }
         </style>
         <!-- Custom styles for this template -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+        
         <link href="/stylesheets/pricing.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ URL::asset('stylesheets/analytics.css') }}">
     </head>
@@ -47,8 +51,8 @@
             <a class="navbar-brand backgroud col-md-3 col-lg-2 mr-5px px-3 color-mainblue" href="">
                 <img src="{{URL::asset('logo/TTW_WHITE.png')}}" alt="" width='50px'>
             </a>
-            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <button id="sidebar-toggler" class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <ul class="navbar-nav px-3 d-none d-md-block">
                 <li class="nav-item text-nowrap">
@@ -65,15 +69,4 @@
         @show
 
     </body>
-
-    <script>
-        var input = document.getElementById("Search");
-        input.addEventListener("keyup", function(event) {
-            if (event.keyCode === 13) {
-                event.preventDefault();
-                document.getElementById("invbtn").click();
-            }
-        });
-    </script>
-
 </html>
