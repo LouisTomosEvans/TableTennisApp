@@ -20,7 +20,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('dashboard.statistics')}}">
+                        <a class="nav-link" href="#">
                             Your Statistics
                         </a>
                     </li>
